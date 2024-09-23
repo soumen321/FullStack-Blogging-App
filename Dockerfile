@@ -8,6 +8,8 @@ COPY target/*.jar $APP_HOME/app.jar
 
 WORKDIR $APP_HOME
 
-COPY target/*.jar $APP_HOME/app.jar
+COPY target/*.jar $APP_HOME/
+
+RUN mv $APP_HOME/*.jar $APP_HOME/app.jar
 
 CMD ["java", "-jar", "app.jar"]
